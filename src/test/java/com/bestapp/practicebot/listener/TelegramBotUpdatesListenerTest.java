@@ -52,7 +52,7 @@ public class TelegramBotUpdatesListenerTest {
 
         ArgumentCaptor<SendMessage> argumentCaptor = ArgumentCaptor.forClass(SendMessage.class);
         Mockito.verify(telegramBot).execute(argumentCaptor.capture());
-        SendMessage actual =argumentCaptor.getValue();
+        SendMessage actual = argumentCaptor.getValue();
 
         Assertions.assertThat(actual.getParameters().get("chat_id"))
                 .isEqualTo(update.message().chat().id());
@@ -61,5 +61,4 @@ public class TelegramBotUpdatesListenerTest {
                 Я помогу вам запланировать задачу. Пожалуйста отправьте её мне в следующем формате: 09.06.2023 15:00 Сделать домашнюю работу
                 """);
     }
-
 }
